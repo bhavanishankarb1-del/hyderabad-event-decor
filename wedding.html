@@ -43,6 +43,89 @@
             text-decoration: none;
             color: blue;
         }
+
+
+/* LIGHTBOX STYLE */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    text-align: center;
+    padding-top: 40px;
+}
+
+.lightbox-content {
+    position: relative;
+    margin: auto;
+    max-width: 80%;
+}
+
+#lightbox-img {
+    width: auto;
+    max-width: 100%;
+    max-height: 70vh;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* Arrows */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    color: white;
+    font-size: 40px;
+    padding: 10px;
+    user-select: none;
+}
+
+.prev { left: 0; }
+.next { right: 0; }
+
+.prev:hover, .next:hover {
+    color: yellow;
+}
+
+/* Thumbnails */
+.thumbnail-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.thumbnail-container img {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.thumbnail-container img.active,
+.thumbnail-container img:hover {
+    opacity: 1;
+    border: 2px solid yellow;
+}
+
+
     </style>
 </head>
 
@@ -53,15 +136,139 @@
 </header>
 
 <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1519741497674-611481863552">
     <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e">
     <img src="https://images.unsplash.com/photo-1529636798458-92182e662485">
-    <img src="https://images.unsplash.com/photo-1530023367847-a683933f4172">
-    <img src="https://images.unsplash.com/photo-1542042161784-26ab9e041e89">
     <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc">
+    <img src="https://pub-1407f82391df4ab1951418d04be76914.r2.dev/uploads/2eb2f64d-e208-4a68-b1ed-6a2bd020923a.jpg">
+    <img src="https://pub-1407f82391df4ab1951418d04be76914.r2.dev/uploads/92d3f826-a98f-492e-9163-38a22f7a5617.jpg">
+    <img src="https://pub-1407f82391df4ab1951418d04be76914.r2.dev/uploads/f438e1f2-007a-48df-b976-54d475d67404.jpg">
+    <img src="https://pub-1407f82391df4ab1951418d04be76914.r2.dev/uploads/5720bf15-2b7f-41f2-992b-b5e89c086809.jpg">
+    <img src="https://pub-1407f82391df4ab1951418d04be76914.r2.dev/uploads/9234086e-1070-4294-965c-e05d8ae811df.jpg">
+    <img src="https://pub-1407f82391df4ab1951418d04be76914.r2.dev/uploads/cb44db1d-7a23-4fe7-90c8-74c7007533db.jpg">
+    <img src="https://pub-1407f82391df4ab1951418d04be76914.r2.dev/uploads/8ed739d3-a94b-4106-a1ba-14889873a84e.jpg">
+    <img src="https://pub-1407f82391df4ab1951418d04be76914.r2.dev/uploads/5e07c374-ae6b-4720-a166-01a7d1c5f2f9.jpg">
+    <img src="https://pub-1407f82391df4ab1951418d04be76914.r2.dev/uploads/5265f6cd-f3aa-420a-924b-8e56e60d8092.jpg">
+    <img src="https://pub-1407f82391df4ab1951418d04be76914.r2.dev/uploads/62f09948-c972-4108-83c1-2b0c970fe300.jpg">
+   <img src="https://pub-1407f82391df4ab1951418d04be76914.r2.dev/uploads/43a47eff-717b-4f70-bd20-6fcbb182f7f5.jpg">
+   <img src="https://pub-1407f82391df4ab1951418d04be76914.r2.dev/uploads/4c4bfe79-10ec-4e7d-a852-45d342081aae.jpg">
+   <img src="https://pub-1407f82391df4ab1951418d04be76914.r2.dev/uploads/883eb1db-d378-4a63-b812-35212bf36ea8.jpg">
+   <img src="https://pub-1407f82391df4ab1951418d04be76914.r2.dev/uploads/0856dd06-c950-4307-a040-9a01bcf268db.jpg">
+   <img src="https://pub-1407f82391df4ab1951418d04be76914.r2.dev/uploads/8158e2e8-ca13-4df2-b8cd-035e79195b56.jpg">
+   <img src="https://pub-1407f82391df4ab1951418d04be76914.r2.dev/uploads/8a739a83-9104-4601-8c77-d7b20646d78b.jpg">
+   <img src="https://pub-1407f82391df4ab1951418d04be76914.r2.dev/uploads/5460276f-f77e-4004-9c9e-cfcd56675cf1.jpg">
+   <img src="https://pub-1407f82391df4ab1951418d04be76914.r2.dev/uploads/9e85a1be-6493-48a4-9bed-c70932626e93.jpg">
+   <img src="https://pub-1407f82391df4ab1951418d04be76914.r2.dev/uploads/8dadf38b-8d84-4b5b-a180-aecb654b72f4.jpg">
+   <img src="https://pub-1407f82391df4ab1951418d04be76914.r2.dev/uploads/df467d05-055f-4185-b077-ce676d12e72a.jpg">
+   <img src="https://pub-1407f82391df4ab1951418d04be76914.r2.dev/uploads/bf9d80cb-1784-4d6d-859c-08e3293f675b.jpg">
+   <img src="https://pub-1407f82391df4ab1951418d04be76914.r2.dev/uploads/aff2a43e-f2a6-4fb0-9652-3bbfd4267581.jpg">
 </div>
 
 <a href="index.html">⬅ Back to Home</a>
+
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+
+    <div class="lightbox-content">
+        <span class="prev">&#10094;</span>
+        <img id="lightbox-img">
+        <span class="next">&#10095;</span>
+    </div>
+
+    <!-- Related Images Thumbnails -->
+    <div class="thumbnail-container"></div>
+</div>
+
+<script>
+const galleryImages = document.querySelectorAll(".gallery img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".close");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+const thumbnailContainer = document.querySelector(".thumbnail-container");
+
+let currentIndex = 0;
+
+// Open Lightbox
+galleryImages.forEach((img, index) => {
+    img.addEventListener("click", () => {
+        currentIndex = index;
+        openLightbox();
+    });
+});
+
+function openLightbox() {
+    lightbox.style.display = "block";
+    showImage();
+    createThumbnails();
+}
+
+function showImage() {
+    lightboxImg.src = galleryImages[currentIndex].src;
+    updateActiveThumbnail();
+}
+
+// Close
+closeBtn.onclick = () => lightbox.style.display = "none";
+lightbox.onclick = (e) => {
+    if (e.target === lightbox) lightbox.style.display = "none";
+};
+
+// Next / Prev
+nextBtn.onclick = () => {
+    currentIndex = (currentIndex + 1) % galleryImages.length;
+    showImage();
+};
+
+prevBtn.onclick = () => {
+    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+    showImage();
+};
+
+// Keyboard Support
+document.addEventListener("keydown", (e) => {
+    if (lightbox.style.display === "block") {
+        if (e.key === "ArrowRight") nextBtn.onclick();
+        if (e.key === "ArrowLeft") prevBtn.onclick();
+        if (e.key === "Escape") lightbox.style.display = "none";
+    }
+});
+
+// Thumbnails
+function createThumbnails() {
+    thumbnailContainer.innerHTML = "";
+    galleryImages.forEach((img, index) => {
+        const thumb = document.createElement("img");
+        thumb.src = img.src;
+        thumb.onclick = () => {
+            currentIndex = index;
+            showImage();
+        };
+        thumbnailContainer.appendChild(thumb);
+    });
+}
+
+function updateActiveThumbnail() {
+    const thumbs = thumbnailContainer.querySelectorAll("img");
+    thumbs.forEach((thumb, index) => {
+        thumb.classList.toggle("active", index === currentIndex);
+    });
+}
+
+// Swipe Support (Mobile)
+let startX = 0;
+lightboxImg.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+});
+
+lightboxImg.addEventListener("touchend", e => {
+    let endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) nextBtn.onclick();
+    if (endX - startX > 50) prevBtn.onclick();
+});
+</script>
+
+
 
 </body>
 </html>
